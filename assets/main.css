@@ -4,7 +4,7 @@
          url("fonts/Architext.ttf")  format("truetype");
 }
 
-#bg {
+.hero {
   /* Location of the image */
   background-image: url(images/background.png);
 

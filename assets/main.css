@@ -4,12 +4,11 @@
          url("fonts/Architext.ttf")  format("truetype");
 }
 
-.hero {
-  background: black url(images/background.png) center / cover;
+body::after{
+  position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+  content:url(images/background.png);
 }
 
-.js-loading *,
-.js-loading *:before,
-.js-loading *:after {
-  animation-play-state: paused !important;
+.hero {
+  background: black url(images/background.png) center / cover;
 }

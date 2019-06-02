@@ -3,16 +3,6 @@
     src: url("fonts/Architext.woff") format("woff"),
          url("fonts/Architext.ttf")  format("truetype");
 }
-
-body::after{
-  position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
-  content:url(images/background_max.png);
-}
-
-.hero {
-  background: black url(images/background_max.png) center / cover;
-}
-
 .center, .center-column, .top, .right, .bottom, .left {
 	display: flex;
 	justify-content: center;
@@ -27,6 +17,15 @@ body::after{
 .right  { justify-content: flex-end;   }
 .bottom { align-items:     flex-end;   }
 .left   { justify-content: flex-start; }
+
+body::after{
+  position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+  content:url(images/background_max.png);
+}
+
+.hero {
+  background: black url(images/background_max.png) center / cover;
+}
 
 @media (max-width: 1024px) {
 	.desktop {

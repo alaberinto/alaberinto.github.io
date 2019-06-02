@@ -6,9 +6,9 @@
 
 body::after{
   position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
-  content:url(images/background.png);
+  content:url(images/background_max.png);
 }
 
 .hero {
-  background: black url(images/background.png) center / cover;
+  background: black url(images/background_max.png) center / cover;
 }

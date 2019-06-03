@@ -16,11 +16,15 @@
 .top    { align-items:     flex-start; }
 .right  { justify-content: flex-end;   }
 .bottom { align-items:     flex-end;   }
-.left   { justify-content: flex-start; }(
+.left   { justify-content: flex-start; }
 
 body::after{
   position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
-  content:url(images/background_max.png);
+  content:url(images/background_max.png), url(images/background_max2.png);
+}
+
+.hero {
+  background: black url(images/background_max.png) center / cover;
 }
 
 .name {
@@ -35,5 +39,14 @@ body::after{
 	}
     .name {
         font-size: 30px;
+    }
+    .hero {
+        background: black url(images/background_max.png) center / cover;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        background: black url(images/background_max2.png) center / cover;
     }
 }

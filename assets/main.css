@@ -18,13 +18,16 @@
 .bottom { align-items:     flex-end;   }
 .left   { justify-content: flex-start; }
 
-body::after{
-  position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
-  content:url(images/background_max.png), url(images/background_max2.png);
+body::before {
+    content:url(images/background_max.png), url(images/background_max2.png);
+    background-image: url(images/background_max.png);
+    visibility: hidden;
+    position: absolute;
+    left: -999em;
 }
 
 .hero {
-  background: black url(images/background_max.png) center / cover;
+    background: black url(images/background_max.png) center / cover;
 }
 
 .name {

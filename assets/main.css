@@ -20,7 +20,7 @@
 
 body::after{
   position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
-  content:url(images/background_max.png), url(images/background_max2.png);
+  content:url(images/background_max.png);
 }
 
 .name {
@@ -35,14 +35,5 @@ body::after{
 	}
     .name {
         font-size: 30px;
-    }
-    .hero {
-        background: black url(images/background_max.png) center / cover;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero {
-        background: black url(images/background_max2.png) center / cover;
     }
 }

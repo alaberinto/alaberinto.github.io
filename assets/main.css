@@ -41,18 +41,6 @@ body::after{
     }
 }
 
-@media (max-width: 1024px) {
-	.desktop {
-		display: none;
-	}
-    .name {
-        font-size: 30px;
-    }
-    .hero {
-        background: black url(images/background_max.png) center / cover;
-    }
-}
-
 @media (max-width: 768px) {
     .hero {
         background: black url(images/background_max2.png) center / cover;

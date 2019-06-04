@@ -1,9 +1,20 @@
 var root = document.body
 
+function open() {
+    alert("hi")
+}
+
+var Menu = {
+    view: function () {
+        return m("div")
+    }
+}
+
 var Hamburg = {
     view: function () {
-        return m("figure", {
-            class: "navbar-item image has-text-black center"
+        return m("a", {
+            class: "navbar-item image has-text-black center",
+            onclick: open
         }, m("i", {
             class: "fas fa-bars"
         }))
@@ -13,7 +24,7 @@ var Hamburg = {
 var ContactLink = {
     view: function () {
         return m("a[href=/contact]", {
-            class: "navbar-item is-transparent desktop",
+            class: "navbar-item is-transparent has-text-black desktop",
             oncreate: m.route.link
         }, "CONTACT")
     }
@@ -23,7 +34,7 @@ var ColumnRight = {
     view: function () {
         return m("div", {
             class: "column right heading has-text-weight-bold has-text-black"
-        }, [m(ContactLink), m(Hamburg)])
+        }, [m(ContactLink), m(Hamburg), m(Menu)])
     }
 }
 

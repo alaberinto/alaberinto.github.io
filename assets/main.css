@@ -43,6 +43,12 @@ body::before {
     font-weight: 1000;
 }
 
+.open {
+    background-color: rgba(black, 0.86);
+    height: 100%;
+    width: 400px;
+}
+
 @media (max-width: 1024px) {
 	.desktop {
 		display: none;

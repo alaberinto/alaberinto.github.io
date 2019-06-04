@@ -12,14 +12,30 @@ var Hamburg = {
 }
 
 var Menu = {
-    view: function() {
+    view: function () {
         return m("div", {
-            class: "dropdown-menu",
-            role: "menu"
-        }, m("a[href=/contact]", {
-            class: "navbar-item has-text-black right",
-            oncreate: m.route.link
-        }, "CONTACT"))
+                class: "dropdown-menu",
+                role: "menu"
+            },
+            // ABOUT ME
+            m("a[href=/about]", {
+                class: "navbar-item has-text-black right",
+                oncreate: m.route.link
+            }, "ABOUT ME"),
+            //PROJECTS
+            m("a[href=/projects]", {
+                class: "navbar-item has-text-black right",
+                oncreate: m.route.link
+            }, "PROJECTS"),
+            //GITHUB
+            m("a[href=https://github.com/alaberinto]", {
+                class: "navbar-item has-text-black right"
+            }, "GITHUB"),
+            //CONTACT
+            m("a[href=/contact]", {
+                class: "navbar-item has-text-black right",
+                oncreate: m.route.link
+            }, "CONTACT"))
     }
 }
 
@@ -104,7 +120,10 @@ var Contact = {
     }
 }
 
+m.route.prefix("")
 m.route(root, "/", {
     "/": Home,
     "/contact": Contact,
+//    "/about": About,
+//    "/projects", Projects
 })

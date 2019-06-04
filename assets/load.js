@@ -1,19 +1,9 @@
 var root = document.body
 
-function open() {
-    alert("hi")
-}
-
-var Menu = {
-    view: function () {
-        return m("div")
-    }
-}
-
 var Hamburg = {
     view: function () {
         return m("a", {
-            class: "navbar-item image has-text-black center",
+            class: "navbar-item image has-text-black center is-hoverable",
             onclick: open
         }, m("i", {
             class: "fas fa-bars"
@@ -21,10 +11,38 @@ var Hamburg = {
     }
 }
 
+var Menu = {
+    view: function() {
+        return m("div", {
+            class: "dropdown-menu",
+            role: "menu"
+        }, m("a[href=/contact]", {
+            class: "navbar-item has-text-black right",
+            oncreate: m.route.link
+        }, "CONTACT"))
+    }
+}
+
+var Trigger = {
+    view: function () {
+        return m("div", {
+            class: "dropdown-trigger"
+        }, m(Hamburg))
+    }
+}
+
+var Dropdown = {
+    view: function () {
+        return m("div", {
+            class: "dropdown is-hoverable is-right"
+        }, [m(Trigger), m(Menu)])
+    }
+}
+
 var ContactLink = {
     view: function () {
         return m("a[href=/contact]", {
-            class: "navbar-item is-transparent has-text-black desktop",
+            class: "navbar-item has-text-black desktop",
             oncreate: m.route.link
         }, "CONTACT")
     }
@@ -33,8 +51,8 @@ var ContactLink = {
 var ColumnRight = {
     view: function () {
         return m("div", {
-            class: "column right heading has-text-weight-bold has-text-black"
-        }, [m(ContactLink), m(Hamburg), m(Menu)])
+            class: "column right heading has-text-weight-bold"
+        }, [m(ContactLink), m(Dropdown)])
     }
 }
 

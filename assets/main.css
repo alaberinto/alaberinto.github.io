@@ -1,27 +1,43 @@
 @font-face {
     font-family: 'Architext';
     src: url("fonts/Architext.woff") format("woff"),
-         url("fonts/Architext.ttf")  format("truetype");
+        url("fonts/Architext.ttf") format("truetype");
 }
 
 body {
     overflow: hidden;
 }
 
-.center, .center-column, .top, .right, .bottom, .left {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.center,
+.center-column,
+.top,
+.right,
+.bottom,
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .center-column {
     flex-direction: column;
 }
 
-.top    { align-items:     flex-start; }
-.right  { justify-content: flex-end;   }
-.bottom { align-items:     flex-end;   }
-.left   { justify-content: flex-start; }
+.top {
+    align-items: flex-start;
+}
+
+.right {
+    justify-content: flex-end;
+}
+
+.bottom {
+    align-items: flex-end;
+}
+
+.left {
+    justify-content: flex-start;
+}
 
 /*
 body::before {
@@ -58,19 +74,37 @@ body::before {
 }
 
 @media (max-width: 1024px) {
-	.desktop {
-		display: none;
-	}
+    .desktop {
+        display: none;
+    }
+
     .name {
         font-size: 30px;
     }
-    .hero {
+
+    .head1 {
         background: black url(images/background_max.png) center / cover;
+    }
+
+    .head2 {
+        background: black url(images/about.jpg) center / cover;
+    }
+
+    .head3 {
+        background: black url(images/contact.jpg) center / cover;
     }
 }
 
 @media (max-width: 768px) {
-    .hero {
+    .head1 {
         background: black url(images/background_max2.png) center / cover;
+    }
+
+    .head2 {
+        background: black url(images/about.jpg) center / cover;
+    }
+
+    .head3 {
+        background: black url(images/contact.jpg) center / cover;
     }
 }

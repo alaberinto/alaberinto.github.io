@@ -115,6 +115,16 @@ var Home = {
     }
 }
 
+/************** ABOUT **************/
+
+var About = {
+    view: function () {
+        return m("section", {
+            class: "hero head2 is-fullheight animated fadeInUp delay-1s"
+        }, m(Head))
+    }
+}
+
 /************** CONTACT **************/
 
 var Contact = {
@@ -125,15 +135,7 @@ var Contact = {
     }
 }
 
-/************** ABOUT **************/
-
-var About = {
-    view: function () {
-        return m("section", {
-            class: "hero head2 is-fullheight animated fadeInUp delay-1s"
-        }, m(Head))
-    }
-}
+/************** ROUTING **************/
 
 m.route.prefix("")
 m.route(root, "/", {

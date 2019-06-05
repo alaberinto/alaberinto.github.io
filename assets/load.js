@@ -1,10 +1,11 @@
 var root = document.body
 
+/************** HOME **************/
+
 var Hamburg = {
     view: function () {
         return m("a", {
-            class: "navbar-item image has-text-black center is-hoverable",
-            onclick: open
+            class: "navbar-item image has-text-black center is-hoverable"
         }, m("i", {
             class: "fas fa-bars"
         }))
@@ -34,7 +35,7 @@ var Menu = {
             //CONTACT
             m("a[href=/contact]", {
                 class: "navbar-item has-text-black right",
-                oncreate: m.route.link
+                oncreate: m.route.link,
             }, "CONTACT"))
     }
 }
@@ -59,7 +60,7 @@ var ContactLink = {
     view: function () {
         return m("a[href=/contact]", {
             class: "navbar-item has-text-black desktop",
-            oncreate: m.route.link
+            oncreate: m.route.link,
         }, "CONTACT")
     }
 }
@@ -98,7 +99,7 @@ var Columns = {
     }
 }
 
-var Hero = {
+var Head = {
     view: function () {
         return m("div", {
             class: "hero-head"
@@ -109,14 +110,28 @@ var Hero = {
 var Home = {
     view: function () {
         return m("section", {
-            class: "hero is-fullheight animated fadeInUp delay-1s"
-        }, m(Hero))
+            class: "hero head1 is-fullheight animated fadeInUp delay-1s"
+        }, m(Head))
     }
 }
 
+/************** CONTACT **************/
+
 var Contact = {
     view: function () {
-        return "Hello!"
+        return m("section", {
+            class: "hero head3 is-fullheight animated fadeInUp delay-1s"
+        }, m(Head))
+    }
+}
+
+/************** ABOUT **************/
+
+var About = {
+    view: function () {
+        return m("section", {
+            class: "hero head2 is-fullheight animated fadeInUp delay-1s"
+        }, m(Head))
     }
 }
 
@@ -124,6 +139,6 @@ m.route.prefix("")
 m.route(root, "/", {
     "/": Home,
     "/contact": Contact,
-//    "/about": About,
+    "/about": About,
 //    "/projects", Projects
 })

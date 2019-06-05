@@ -33,8 +33,16 @@ body::before {
 }
 */
 
-.hero {
+.head1 {
     background: black url(images/background_max.png) center / cover;
+}
+
+.head2 {
+    background: black url(images/about.jpg) center / cover;
+}
+
+.head3 {
+    background: black url(images/contact.jpg) center / cover;
 }
 
 .name {

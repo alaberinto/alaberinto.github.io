@@ -50,7 +50,7 @@ body::before {
 */
 
 .head1 {
-    background: black url(images/background_max.png) center / cover;
+    background: black url(images/home.png) center / cover;
 }
 
 .head2 {
@@ -91,7 +91,7 @@ body::before {
     }
 
     .head1 {
-        background: black url(images/background_max.png) center / cover;
+        background: black url(images/home.png) center / cover;
     }
 
     .head2 {
@@ -105,14 +105,14 @@ body::before {
 
 @media (max-width: 768px) {
     .head1 {
-        background: black url(images/background_max2.png) center / cover;
+        background: black url(images/home_mobile.png) center / cover;
     }
 
     .head2 {
-        background: black url(images/about.jpg) center / cover;
+        background: black url(images/about_mobile.jpg) center / cover;
     }
 
     .head3 {
-        background: black url(images/contact.jpg) center / cover;
+        background: black url(images/contact_mobile.jpg) center / cover;
     }
 }

@@ -105,21 +105,51 @@ var Head = {
     }
 }
 
+var Poem = {
+    view: function() {
+        return m("div", {
+            class: "hero-body"
+        }, m("div", {
+            class: "hidden is-overlay from-top"
+        }, "on a cold and windy day,    my love for you           kept me warm and steady.   in a cold and windy world, your love for me          keeps me calm             and brings me peace."))
+    }
+}
+
 var Home = {
     view: function () {
         return m("section", {
             class: "hero head1 is-fullheight animated fadeInUp delay-1s"
-        }, m(Head))
+        }, [m(Head), m(Poem)])
     }
 }
 
 /************** ABOUT **************/
 
+var AboutInfo = {
+    view: function () {
+        return m("div", {
+            class: "is-overlay has-text-centered from-top"
+        }, m("div", {
+                class: "has-text-black is-lowercase is-size-3-touch is-size-2-desktop"
+            }, "about me", m("div", {
+            class: "name-down has-padding-top-15"
+        }, "hi, i'm alvin laberinto. i'm a full stack developer from calgary, ab, canada. i graduated from the software development program at SAIT in April 2019.")))
+    }
+}
+
+var AboutBody = {
+    view: function () {
+        return m("div", {
+            class: "hero-body"
+        }, m(AboutInfo))
+    }
+}
+
 var About = {
     view: function () {
         return m("section", {
             class: "hero head2 is-fullheight animated fadeInUp delay-1s"
-        }, m(Head))
+        }, [m(Head), m(AboutBody)])
     }
 }
 
@@ -138,7 +168,7 @@ var Links = {
 var LinkHeader = {
     view: function () {
         return m("div", {
-            class: "has-text-black icon-down"
+            class: "has-text-black name"
         }, m(Links))
     }
 }

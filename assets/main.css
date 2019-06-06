@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap');
+
 @font-face {
     font-family: 'Architext';
     src: url("fonts/Architext.woff") format("woff"),
@@ -39,16 +41,6 @@ body {
     justify-content: flex-start;
 }
 
-/*
-body::before {
-    content:url(images/background_max.png), url(images/background_max2.png);
-    background-image: url(images/background_max.png);
-    visibility: hidden;
-    position: absolute;
-    left: -999em;
-}
-*/
-
 .head1 {
     background: black url(images/home.png) center / cover;
 }
@@ -61,10 +53,24 @@ body::before {
     background: black url(images/contact.jpg) center / cover;
 }
 
+.hidden {
+    width: 280px;
+    margin-left: 200px;
+    font-family: "Cutive Mono", Courier, monospace;
+}
+
 .name {
-    font-family: 'Architext', Arial, sans-serif;
+    font-family: 'Architext', Courier, monospace;
     font-size: 45px;
     font-weight: 1000;
+}
+
+.name-down {
+    font-family: 'Cutive Mono', Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 1000;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 .open {
@@ -77,17 +83,24 @@ body::before {
     top: 100px;
 }
 
-.icon-down {
-    font-size: 45px;
-}
-
 @media (max-width: 1024px) {
     .desktop {
         display: none;
     }
 
+    .hidden {
+        width: 170px;
+        margin-left: 100px;
+        font-size: 10px;
+    }
+
     .name {
         font-size: 30px;
+    }
+
+    .name-down {
+        font-size 15px;
+        margin: 0;
     }
 
     .head1 {

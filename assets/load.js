@@ -132,7 +132,7 @@ var AboutInfo = {
         }, m("div", {
                 class: "has-text-black is-lowercase is-size-3-touch is-size-2-desktop"
             }, "about me", m("div", {
-            class: "name-down has-padding-top-15"
+            class: "name-down has-padding-top-15 has-text-left-touch is-size-5-touch"
         }, "hi, i'm alvin laberinto. i'm a full stack developer from calgary, ab, canada. i graduated from the software development program at SAIT in April 2019.")))
     }
 }

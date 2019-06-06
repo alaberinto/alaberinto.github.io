@@ -73,6 +73,14 @@ body::before {
     width: 400px;
 }
 
+.from-top {
+    top: 100px;
+}
+
+.icon-down {
+    font-size: 45px;
+}
+
 @media (max-width: 1024px) {
     .desktop {
         display: none;

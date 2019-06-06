@@ -75,8 +75,8 @@ var ColumnRight = {
 
 var Name = {
     view: function () {
-        return m("div", {
-            class: "name"
+        return m("a[href=/]", {
+            class: "has-text-black name"
         }, "Alvin Laberinto")
     }
 }
@@ -92,10 +92,8 @@ var ColumnLeft = {
 var Columns = {
     view: function () {
         return m("div", {
-                class: "columns is-mobile is-marginless"
-            },
-                 [m(ColumnLeft), m(ColumnRight)]
-        )
+            class: "columns is-mobile is-marginless"
+        }, [m(ColumnLeft), m(ColumnRight)])
     }
 }
 
@@ -127,11 +125,56 @@ var About = {
 
 /************** CONTACT **************/
 
+var Links = {
+    view: function () {
+        return m("span", {
+            class: "icon"
+        }, [m("a[href=https://github.com/alaberinto]", m("i", {class: "fab fa-github-square has-text-danger has-padding-top-45 fa-2x"})),
+           m("a[href=https://www.linkedin.com/in/alaberinto/]", m("i", {class: "fab fa-linkedin has-text-danger has-padding-top-45 fa-2x"})),
+           m("a[href=https://codepen.io/alaberinto/]", m("i", {class: "fab fa-codepen has-text-danger has-padding-top-45 fa-2x"}))])
+    }
+}
+
+var LinkHeader = {
+    view: function () {
+        return m("div", {
+            class: "has-text-black icon-down"
+        }, m(Links))
+    }
+}
+
+var ContactTitle = {
+    view: function () {
+        return m("div", {
+                class: "has-text-black name"
+            }, "Shoot me an email: ",
+            m("a[href=mailto:mralvinlaberinto@gmail.com]", {
+                class: "has-text-danger name"
+            }, "mralvinlaberinto@gmail.com"))
+    }
+}
+
+var ContactInfo = {
+    view: function () {
+        return m("div", {
+            class: "is-overlay has-text-centered from-top"
+        }, m(ContactTitle), m(LinkHeader))
+    }
+}
+
+var ContactBody = {
+    view: function () {
+        return m("div", {
+            class: "hero-body"
+        }, m(ContactInfo))
+    }
+}
+
 var Contact = {
     view: function () {
         return m("section", {
             class: "hero head3 is-fullheight animated fadeInUp delay-1s"
-        }, m(Head))
+        }, [m(Head), m(ContactBody)])
     }
 }
 
@@ -142,5 +185,5 @@ m.route(root, "/", {
     "/": Home,
     "/contact": Contact,
     "/about": About,
-//    "/projects", Projects
+    //    "/projects": Projects,
 })

@@ -2,43 +2,58 @@ var root = document.body
 
 /************** HOME **************/
 
+var MadeBy = {
+    view: function () {
+        return m("div", {class: "light-bg has-text-white is-size-7"}, [m("span", "Made with "), m("a[href=https://mithril.js.org/]", "MithrilJS"), m("span", " and "), m("a[href=https://mithril.js.org/]", "BulmaJS")])
+    }
+}
+
+var Foot = {
+    view: function () {
+        return m("section", {class: "hero-foot"}, m(MadeBy))
+    }
+}
+
 var Hamburg = {
     view: function () {
         return m("a", {
-            class: "navbar-item image has-text-black center is-hoverable"
-        }, m("i", {
-            class: "fas fa-bars"
-        }))
+                class: "navbar-item image has-text-black center is-hoverable"
+            },
+            m("i", {
+                class: "fas fa-bars"
+            })
+        )
     }
 }
 
 var Menu = {
     view: function () {
         return m("div", {
-            class: "dropdown-menu",
-            role: "menu"
-        }, m("div", {
-                class: "dropdown-content"
+                class: "dropdown-menu",
+                role: "menu"
             },
-            // ABOUT ME
-            m("a[href=/about]", {
-                class: "navbar-item has-text-black right",
-                oncreate: m.route.link
-            }, "ABOUT ME"),
-            //PROJECTS
-            m("a[href=/projects]", {
-                class: "navbar-item has-text-black right",
-                oncreate: m.route.link
-            }, "PROJECTS"),
-            //GITHUB
-            m("a[href=https://github.com/alaberinto]", {
-                class: "navbar-item has-text-black right"
-            }, "GITHUB"),
-            //CONTACT
-            m("a[href=/contact]", {
-                class: "navbar-item has-text-black right",
-                oncreate: m.route.link,
-            }, "CONTACT")))
+            m("div", {
+                    class: "dropdown-content"
+                },
+                // ABOUT ME
+                m("a[href=/about]", {
+                    class: "navbar-item has-text-black right",
+                    oncreate: m.route.link
+                }, "ABOUT ME"),
+                //PROJECTS
+                m("a[href=/projects]", {
+                    class: "navbar-item has-text-black right",
+                    oncreate: m.route.link
+                }, "PROJECTS"),
+                //GITHUB
+                m("a[href=https://github.com/alaberinto]", {
+                    class: "navbar-item has-text-black right"
+                }, "GITHUB"),
+                //CONTACT
+                m("a[href=/contact]", {
+                    class: "navbar-item has-text-black right",
+                    oncreate: m.route.link,
+                }, "CONTACT")))
     }
 }
 
@@ -121,7 +136,7 @@ var Home = {
     view: function () {
         return m("section", {
             class: "hero head1 is-fullheight animated fadeInUp delay-1s"
-        }, [m(Head), m(Poem)])
+        }, [m(Head), m(Poem), m(Foot)])
     }
 }
 
@@ -133,9 +148,16 @@ var AboutInfo = {
             class: "is-overlay has-text-centered from-top"
         }, m("div", {
             class: "has-text-black name"
-        }, "About Me", m("div", {
-            class: "name-down has-padding-top-15 has-text-left-touch is-size-5-touch "
-        }, "hi, i'm alvin laberinto. i'm a full stack developer from calgary, ab, canada. i graduated from the software development program at SAIT in April 2019.")))
+        }, ["About Me",
+            m("div", {
+                class: "name-down has-padding-top-15 has-text-left-touch is-size-5-touch "
+            }, "hi, i'm alvin laberinto. i'm a full stack developer from calgary, ab, canada."),
+            m("div", {
+                class: "name-down has-padding-top-15 has-text-left-touch is-size-5-touch "
+            }, "i graduated from the software development program at SAIT in April 2019."),
+            m("div", {
+                class: "name-down has-padding-top-15 has-text-left-touch is-size-5-touch "
+            }, "i am completely falling in love with learning Javascript frameworks.")]))
     }
 }
 
@@ -151,7 +173,7 @@ var About = {
     view: function () {
         return m("section", {
             class: "hero head2 is-fullheight animated fadeInUp delay-1s"
-        }, [m(Head), m(AboutBody)])
+        }, [m(Head), m(AboutBody), m(Foot)])
     }
 }
 
@@ -230,7 +252,7 @@ var Contact = {
     view: function () {
         return m("section", {
             class: "hero head3 is-fullheight animated fadeInUp delay-1s"
-        }, [m(Head), m(ContactBody)])
+        }, [m(Head), m(ContactBody), m(Foot)])
     }
 }
 

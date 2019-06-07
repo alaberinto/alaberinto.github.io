@@ -60,7 +60,8 @@ body {
 }
 
 .light-bg {
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 180px;
 }
 
 .name, .email {

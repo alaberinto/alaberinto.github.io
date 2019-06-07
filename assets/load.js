@@ -15,8 +15,10 @@ var Hamburg = {
 var Menu = {
     view: function () {
         return m("div", {
-                class: "dropdown-menu",
-                role: "menu"
+            class: "dropdown-menu",
+            role: "menu"
+        }, m("div", {
+                class: "dropdown-content"
             },
             // ABOUT ME
             m("a[href=/about]", {
@@ -36,7 +38,7 @@ var Menu = {
             m("a[href=/contact]", {
                 class: "navbar-item has-text-black right",
                 oncreate: m.route.link,
-            }, "CONTACT"))
+            }, "CONTACT")))
     }
 }
 
@@ -106,7 +108,7 @@ var Head = {
 }
 
 var Poem = {
-    view: function() {
+    view: function () {
         return m("div", {
             class: "hero-body"
         }, m("div", {
@@ -130,9 +132,9 @@ var AboutInfo = {
         return m("div", {
             class: "is-overlay has-text-centered from-top"
         }, m("div", {
-                class: "has-text-black is-lowercase is-size-3-touch is-size-2-desktop"
-            }, "about me", m("div", {
-            class: "name-down has-padding-top-15 has-text-left-touch is-size-5-touch"
+            class: "has-text-black name"
+        }, "About Me", m("div", {
+            class: "name-down has-padding-top-15 has-text-left-touch is-size-5-touch "
         }, "hi, i'm alvin laberinto. i'm a full stack developer from calgary, ab, canada. i graduated from the software development program at SAIT in April 2019.")))
     }
 }
@@ -158,28 +160,52 @@ var About = {
 var Links = {
     view: function () {
         return m("span", {
-            class: "icon"
-        }, [m("a[href=https://github.com/alaberinto]", m("i", {class: "fab fa-github-square has-text-danger has-padding-top-45 fa-2x"})),
-           m("a[href=https://www.linkedin.com/in/alaberinto/]", m("i", {class: "fab fa-linkedin has-text-danger has-padding-top-45 fa-2x"})),
-           m("a[href=https://codepen.io/alaberinto/]", m("i", {class: "fab fa-codepen has-text-danger has-padding-top-45 fa-2x"}))])
+            class: "icon is-large"
+        }, [m("a[href=https://github.com/alaberinto]", {
+                class: "has-padding-10"
+            },
+            m("i", {
+                class: "fab fa-github-square has-text-danger is-size-1-desktop is-size-1-tablet is-size-3-mobile"
+            })
+        ), m("a[href=https://www.linkedin.com/in/alaberinto/]", {
+                class: "has-padding-10"
+            },
+            m("i", {
+                class: "fab fa-linkedin has-text-danger is-size-1-desktop is-size-1-tablet is-size-3-mobile"
+            })
+        ), m("a[href=https://codepen.io/alaberinto/]", {
+                class: "has-padding-10"
+            },
+            m("i", {
+                class: "fab fa-codepen has-text-danger is-size-1-desktop is-size-1-tablet is-size-3-mobile"
+            })
+        )])
+    }
+}
+
+var LinkTitle = {
+    view: function () {
+        return m("div", {
+            class: "email has-padding-top-25"
+        }, "Check out my profiles:")
     }
 }
 
 var LinkHeader = {
     view: function () {
         return m("div", {
-            class: "has-text-black name"
-        }, m(Links))
+            class: "has-text-black"
+        }, [m(LinkTitle), m(Links)])
     }
 }
 
 var ContactTitle = {
     view: function () {
         return m("div", {
-                class: "has-text-black name"
+                class: "has-text-black email"
             }, "Shoot me an email: ",
             m("a[href=mailto:mralvinlaberinto@gmail.com]", {
-                class: "has-text-danger name"
+                class: "has-text-danger email"
             }, "mralvinlaberinto@gmail.com"))
     }
 }

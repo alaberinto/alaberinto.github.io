@@ -1,16 +1,78 @@
 var root = document.body
 
 /************** HOME **************/
-
-var MadeBy = {
+var Home = {
     view: function () {
-        return m("div", {class: "light-bg has-text-white is-size-7"}, [m("span", "Made with "), m("a[href=https://mithril.js.org/]", "MithrilJS"), m("span", " and "), m("a[href=https://mithril.js.org/]", "BulmaJS")])
+        return m("section", {
+            class: "hero head1 is-fullheight animated fadeInUp delay-1s"
+        }, [m(Head), m(Poem), m(Foot)])
     }
 }
 
-var Foot = {
+var Head = {
     view: function () {
-        return m("section", {class: "hero-foot"}, m(MadeBy))
+        return m("div", {
+            class: "hero-head"
+        }, m(Columns))
+    }
+}
+
+
+var Columns = {
+    view: function () {
+        return m("div", {
+            class: "columns is-mobile is-marginless"
+        }, [m(ColumnLeft), m(ColumnRight)])
+    }
+}
+
+var ColumnLeft = {
+    view: function () {
+        return m("div", {
+            class: "column left has-text-black"
+        }, m(Name))
+    }
+}
+
+var Name = {
+    view: function () {
+        return m("a[href=/]", {
+            class: "has-text-black name"
+        }, "Alvin Laberinto")
+    }
+}
+
+var ColumnRight = {
+    view: function () {
+        return m("div", {
+            class: "column right heading has-text-weight-bold"
+        }, [m(ContactLink), m(Dropdown)])
+    }
+}
+
+
+var ContactLink = {
+    view: function () {
+        return m("a[href=/contact]", {
+            class: "navbar-item has-text-black desktop",
+            oncreate: m.route.link,
+        }, "CONTACT")
+    }
+}
+
+var Dropdown = {
+    view: function () {
+        return m("div", {
+            class: "dropdown is-hoverable is-right"
+        }, [m(Trigger), m(Menu)])
+    }
+}
+
+var Trigger = {
+    view: function () {
+        return m("div", {
+            class: "dropdown-trigger"
+        }, m(Hamburg))
     }
 }
 
@@ -57,71 +119,6 @@ var Menu = {
     }
 }
 
-var Trigger = {
-    view: function () {
-        return m("div", {
-            class: "dropdown-trigger"
-        }, m(Hamburg))
-    }
-}
-
-var Dropdown = {
-    view: function () {
-        return m("div", {
-            class: "dropdown is-hoverable is-right"
-        }, [m(Trigger), m(Menu)])
-    }
-}
-
-var ContactLink = {
-    view: function () {
-        return m("a[href=/contact]", {
-            class: "navbar-item has-text-black desktop",
-            oncreate: m.route.link,
-        }, "CONTACT")
-    }
-}
-
-var ColumnRight = {
-    view: function () {
-        return m("div", {
-            class: "column right heading has-text-weight-bold"
-        }, [m(ContactLink), m(Dropdown)])
-    }
-}
-
-var Name = {
-    view: function () {
-        return m("a[href=/]", {
-            class: "has-text-black name"
-        }, "Alvin Laberinto")
-    }
-}
-
-var ColumnLeft = {
-    view: function () {
-        return m("div", {
-            class: "column left has-text-black"
-        }, m(Name))
-    }
-}
-
-var Columns = {
-    view: function () {
-        return m("div", {
-            class: "columns is-mobile is-marginless"
-        }, [m(ColumnLeft), m(ColumnRight)])
-    }
-}
-
-var Head = {
-    view: function () {
-        return m("div", {
-            class: "hero-head"
-        }, m(Columns))
-    }
-}
-
 var Poem = {
     view: function () {
         return m("div", {
@@ -132,15 +129,34 @@ var Poem = {
     }
 }
 
-var Home = {
+var Foot = {
     view: function () {
-        return m("section", {
-            class: "hero head1 is-fullheight animated fadeInUp delay-1s"
-        }, [m(Head), m(Poem), m(Foot)])
+        return m("section", {class: "hero-foot"}, m(MadeBy))
+    }
+}
+
+var MadeBy = {
+    view: function () {
+        return m("div", {class: "light-bg has-text-white is-size-7"}, [m("span", "Made with "), m("a[href=https://mithril.js.org/]", "MithrilJS"), m("span", " and "), m("a[href=https://mithril.js.org/]", "BulmaJS")])
     }
 }
 
 /************** ABOUT **************/
+var About = {
+    view: function () {
+        return m("section", {
+            class: "hero head2 is-fullheight animated fadeInUp delay-1s"
+        }, [m(Head), m(AboutBody), m(Foot)])
+    }
+}
+
+var AboutBody = {
+    view: function () {
+        return m("div", {
+            class: "hero-body"
+        }, m(AboutInfo))
+    }
+}
 
 var AboutInfo = {
     view: function () {
@@ -160,24 +176,106 @@ var AboutInfo = {
             }, "i am completely falling in love with learning Javascript frameworks.")]))
     }
 }
+/************** PROJECTS **************/
 
-var AboutBody = {
-    view: function () {
-        return m("div", {
-            class: "hero-body"
-        }, m(AboutInfo))
+var Projects = {
+    view: function() {
+        return m("section", {
+            class: "hero head2 is-fullheight animated fadeInUp delay-1s"
+        }, [m(Head), m(ProjectsBody)])
     }
 }
 
-var About = {
+var ProjectsBody = {
     view: function () {
-        return m("section", {
-            class: "hero head2 is-fullheight animated fadeInUp delay-1s"
-        }, [m(Head), m(AboutBody), m(Foot)])
+        return m("div", {
+            class: "hero-body"
+        }, m(ProjectsColumns))
+    }
+}
+
+var ProjectsColumns = {
+    view: function () {
+        return m("div", {
+            class: "columns is-desktop is-variable is-6"
+        }, [m("div", {class: "column"}, m(Project1)),
+                m("div", {class: "column"}, m(Project2)),
+                m("div", {class: "column"}, m(Project3))])
+    }
+}
+
+var Project1 = {
+    view: function () {
+        return m("div", {class: "box"},
+                m("div", {class: "content"}, "Under construction"))
+    }
+}
+
+var Project2 = {
+    view: function () {
+        return m("div", {class: "box"},
+                m("div", {class: "content"}, "Under construction"))
+    }
+}
+
+var Project3 = {
+    view: function () {
+        return m("div", {class: "box"},
+                m("div", {class: "content"}, "Under construction"))
     }
 }
 
 /************** CONTACT **************/
+var Contact = {
+    view: function () {
+        return m("section", {
+            class: "hero head3 is-fullheigh}t animated fadeInUp delay-1s"
+        }, [m(Head), m(ContactBody), m(Foot)])
+    }
+}
+
+var ContactBody = {
+    view: function () {
+        return m("div", {
+            class: "hero-body"
+        }, m(ContactInfo))
+    }
+}
+
+var ContactInfo = {
+    view: function () {
+        return m("div", {
+            class: "is-overlay has-text-centered from-top"
+        }, m(ContactTitle), m(LinkHeader))
+    }
+}
+
+var ContactTitle = {
+    view: function () {
+        return m("div", {
+                class: "has-text-black email"
+            }, "Shoot me an email: ",
+            m("a[href=mailto:mralvinlaberinto@gmail.com]", {
+                class: "has-text-danger email"
+            }, "mralvinlaberinto@gmail.com"))
+    }
+}
+
+var LinkHeader = {
+    view: function () {
+        return m("div", {
+            class: "has-text-black"
+        }, [m(LinkTitle), m(Links)])
+    }
+}
+
+var LinkTitle = {
+    view: function () {
+        return m("div", {
+            class: "email has-padding-top-25"
+        }, "Check out my profiles:")
+    }
+}
 
 var Links = {
     view: function () {
@@ -204,64 +302,12 @@ var Links = {
         )])
     }
 }
-
-var LinkTitle = {
-    view: function () {
-        return m("div", {
-            class: "email has-padding-top-25"
-        }, "Check out my profiles:")
-    }
-}
-
-var LinkHeader = {
-    view: function () {
-        return m("div", {
-            class: "has-text-black"
-        }, [m(LinkTitle), m(Links)])
-    }
-}
-
-var ContactTitle = {
-    view: function () {
-        return m("div", {
-                class: "has-text-black email"
-            }, "Shoot me an email: ",
-            m("a[href=mailto:mralvinlaberinto@gmail.com]", {
-                class: "has-text-danger email"
-            }, "mralvinlaberinto@gmail.com"))
-    }
-}
-
-var ContactInfo = {
-    view: function () {
-        return m("div", {
-            class: "is-overlay has-text-centered from-top"
-        }, m(ContactTitle), m(LinkHeader))
-    }
-}
-
-var ContactBody = {
-    view: function () {
-        return m("div", {
-            class: "hero-body"
-        }, m(ContactInfo))
-    }
-}
-
-var Contact = {
-    view: function () {
-        return m("section", {
-            class: "hero head3 is-fullheight animated fadeInUp delay-1s"
-        }, [m(Head), m(ContactBody), m(Foot)])
-    }
-}
-
 /************** ROUTING **************/
 
 m.route.prefix("")
 m.route(root, "/", {
-    "/": Home,
+    "/": Projects,
     "/contact": Contact,
     "/about": About,
-    //    "/projects": Projects,
+    "/projects": Projects,
 })

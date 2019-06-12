@@ -137,7 +137,7 @@ var Foot = {
 
 var MadeBy = {
     view: function () {
-        return m("div", {class: "light-bg has-text-white is-size-7"}, [m("span", "Made with "), m("a[href=https://mithril.js.org/]", "MithrilJS"), m("span", " and "), m("a[href=https://mithril.js.org/]", "BulmaJS")])
+        return m("div", {class: "light-bg has-text-white is-size-7"}, [m("span", "Made with "), m("a[href=https://mithril.js.org/]", "MithrilJS"), m("span", " and "), m("a[href=https://bulma.io/]", "Bulma")])
     }
 }
 
@@ -163,16 +163,16 @@ var AboutInfo = {
         return m("div", {
             class: "is-overlay has-text-centered from-top"
         }, m("div", {
-            class: "has-text-black name"
+            class: "has-text-black heading is-size-3-desktop is-size-5-touch"
         }, ["About Me",
             m("div", {
-                class: "name-down has-padding-top-15 has-text-left-touch is-size-5-touch "
+                class: "name-down is-lowercase has-padding-top-15 has-text-left-touch is-size-5-touch "
             }, "hi, i'm alvin laberinto. i'm a full stack developer from calgary, ab, canada."),
             m("div", {
-                class: "name-down has-padding-top-15 has-text-left-touch is-size-5-touch "
+                class: "name-down is-lowercase has-padding-top-15 has-text-left-touch is-size-5-touch "
             }, "i graduated from the software development program at SAIT in April 2019."),
             m("div", {
-                class: "name-down has-padding-top-15 has-text-left-touch is-size-5-touch "
+                class: "name-down is-lowercase has-padding-top-15 has-text-left-touch is-size-5-touch "
             }, "i am completely falling in love with learning Javascript frameworks.")]))
     }
 }
@@ -182,7 +182,7 @@ var Projects = {
     view: function() {
         return m("section", {
             class: "hero head2 is-fullheight animated fadeInUp delay-1s"
-        }, [m(Head), m(ProjectsBody)])
+        }, [m(Head), m(ProjectsBody), m(Foot)])
     }
 }
 
@@ -197,31 +197,49 @@ var ProjectsBody = {
 var ProjectsColumns = {
     view: function () {
         return m("div", {
-            class: "columns is-desktop is-variable is-6"
+            class: "columns is-desktop is-centered is-variable is-6"
         }, [m("div", {class: "column"}, m(Project1)),
                 m("div", {class: "column"}, m(Project2)),
-                m("div", {class: "column"}, m(Project3))])
+                m("div", {class: "column"}, m(Project3)),
+                m("div", {class: "column"}, m(Project4))])
     }
 }
 
 var Project1 = {
     view: function () {
         return m("div", {class: "box"},
-                m("div", {class: "content"}, "Under construction"))
+                m("div", {class: "content"},
+                 m("p", {class: "heading is-1"}, "Personal Website"),
+                 m("p", "Portfolio website. Created with MithrilJS and Bulma CSS."),
+                 m("a[href=https://github.com/alaberinto/alaberinto.github.io]", "View code here.")))
     }
 }
 
 var Project2 = {
     view: function () {
         return m("div", {class: "box"},
-                m("div", {class: "content"}, "Under construction"))
+                m("div", {class: "content"},
+                 m("p", {class: "heading is-1"}, "Netflix Creative Sync"),
+                 m("p", "Capstone Project made during the Winter 2018 semester at SAIT. Created with Java, Bootstrap, jQuery and JavaScript."),
+                 m("a[href=mailto:mralvinlaberinto@gmail.com]", "Email to view code.")))
     }
 }
 
 var Project3 = {
     view: function () {
         return m("div", {class: "box"},
-                m("div", {class: "content"}, "Under construction"))
+                m("div", {class: "content"},
+                 m("p", {class: "heading is-1"}, "Other Projects"),
+                 m("a[href=https://github.com/alaberinto?tab=repositories]", "View other projects here.")))
+    }
+}
+
+var Project4 = {
+    view: function () {
+        return m("div", {class: "box"},
+                m("div", {class: "content"},
+                 m("p", {class: "heading is-1"}, "Challenges"),
+                 m("a[href=https://github.com/alaberinto/challenges]", "Coding challenges from Kattis and other websites.")))
     }
 }
 
@@ -229,7 +247,7 @@ var Project3 = {
 var Contact = {
     view: function () {
         return m("section", {
-            class: "hero head3 is-fullheigh}t animated fadeInUp delay-1s"
+            class: "hero head3 is-fullheight animated fadeInUp delay-1s"
         }, [m(Head), m(ContactBody), m(Foot)])
     }
 }
@@ -253,10 +271,10 @@ var ContactInfo = {
 var ContactTitle = {
     view: function () {
         return m("div", {
-                class: "has-text-black email"
+                class: "has-text-black heading is-size-3-desktop is-size-5-touch"
             }, "Shoot me an email: ",
             m("a[href=mailto:mralvinlaberinto@gmail.com]", {
-                class: "has-text-danger email"
+                class: "has-text-danger has-text-weight-light heading is-size-3-desktop is-size-5-touch"
             }, "mralvinlaberinto@gmail.com"))
     }
 }
@@ -272,7 +290,7 @@ var LinkHeader = {
 var LinkTitle = {
     view: function () {
         return m("div", {
-            class: "email has-padding-top-25"
+            class: "heading has-padding-top-25 is-size-3-desktop is-size-5-touch"
         }, "Check out my profiles:")
     }
 }
@@ -306,7 +324,7 @@ var Links = {
 
 m.route.prefix("")
 m.route(root, "/", {
-    "/": Projects,
+    "/": Home,
     "/contact": Contact,
     "/about": About,
     "/projects": Projects,

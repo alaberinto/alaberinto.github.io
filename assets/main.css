@@ -61,10 +61,10 @@ body {
 
 .light-bg {
     background-color: rgba(0, 0, 0, 0.9);
-    width: 180px;
+    width: 170px;
 }
 
-.name, .email {
+.name {
     font-family: 'Architext', Courier, monospace;
     font-size: 45px;
     font-weight: 1000;

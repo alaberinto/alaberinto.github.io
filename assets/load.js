@@ -230,6 +230,7 @@ var Project3 = {
         return m("div", {class: "box"},
                 m("div", {class: "content"},
                  m("p", {class: "heading is-1"}, "Other Projects"),
+                 m("p", "All other projects may be found in my GitHub repositories."),
                  m("a[href=https://github.com/alaberinto?tab=repositories]", "View other projects here.")))
     }
 }
